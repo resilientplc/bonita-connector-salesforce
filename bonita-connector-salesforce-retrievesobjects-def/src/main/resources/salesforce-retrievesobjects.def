@@ -4,7 +4,7 @@
 	<version>1.0.0</version>
 	<icon>salesforce.png</icon>
 
-	<category id="Salesforce" icon="salesforce.png" />
+	<category id="Salesforce" icon="salesforce.png" parentCategoryId="crm"/>
 
 	<input name="username" type="java.lang.String" mandatory="true" />
 	<input name="password" type="java.lang.String" mandatory="true" />
