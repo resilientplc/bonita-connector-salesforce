@@ -60,8 +60,9 @@
         </plugins>
     </build>
 
-    <scm>
-        <developerConnection>scm:svn:https://svn.bonitasoft.org/bonita-connectors-6/branches/connectors/bonita-connector-salesforce/bonita-connector-salesforce-6.0.x</developerConnection>
+     <scm>
+        <developerConnection>scm:git:git@github.com:bonitasoft/bonita-connector-salesforce.git</developerConnection>
+        <connection>scm:git:git@github.com:bonitasoft/bonita-connector-salesforce.git</connection>
+        <url>https://github.com/bonitasoft/bonita-connector-salesforce</url>
     </scm>
-
 </project>
