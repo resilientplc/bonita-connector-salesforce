@@ -3,57 +3,33 @@
 	<parent>
 		<artifactId>bonita-connector-salesforce</artifactId>
 		<groupId>org.bonitasoft.connectors</groupId>
-		<version>6.1.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
+	
 	<artifactId>bonita-connector-salesforce-retrievesobjects-impl</artifactId>
-
+	<version>1.0.12</version>
+	
 	<properties>
 		<implementation.id>salesforce-retrievesobjects</implementation.id>
-		<implementation.version>1.0.9</implementation.version>	</properties>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<artifactId>bonita-connector-salesforce-retrievesobjects-def</artifactId>
 			<groupId>org.bonitasoft.connectors</groupId>
-			<version>${project.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<artifactId>bonita-connector-salesforce-common</artifactId>
 			<groupId>org.bonitasoft.connectors</groupId>
-			<version>${project.version}</version>
+			<version>${salesforce.common.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<dependencies>
-					<dependency>
-						<groupId>org.bonitasoft.connectors</groupId>
-						<artifactId>bonita-connectors-assembly</artifactId>
-						<version>6.1.0-SNAPSHOT</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>assemble</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>connector-assembly</descriptorRef>
-							</descriptorRefs>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.1</version>
-            </plugin>
         </plugins>
 	</build>
 </project>
