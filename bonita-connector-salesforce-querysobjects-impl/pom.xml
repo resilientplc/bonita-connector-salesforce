@@ -17,7 +17,7 @@
 		<dependency>
 			<artifactId>bonita-connector-salesforce-common</artifactId>
 			<groupId>org.bonitasoft.connectors</groupId>
-			<version>1.0.0</version>
+			<version>${salesforce.common.version}</version>
 		</dependency>
 		<dependency>
 			<artifactId>bonita-connector-salesforce-querysobjects-def</artifactId>

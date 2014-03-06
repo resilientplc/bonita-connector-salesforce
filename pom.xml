@@ -28,6 +28,7 @@
 	
 	<properties>
 		<bonita.engine.version>6.2.0</bonita.engine.version>
+		<salesforce.common.version>1.0.0</salesforce.common.version>
 	</properties>
    
 	<dependencies>
