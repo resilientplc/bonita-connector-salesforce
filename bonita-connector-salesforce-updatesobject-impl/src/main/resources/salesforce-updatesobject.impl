@@ -6,7 +6,7 @@
 	<description>Implementation based on com.force.api.force-wsc 24.0.0 and com.force.api-force-partner-api 24.0.0</description>
 	<implementationClassname>org.bonitasoft.connectors.salesforce.partner.UpdateSObjectConnector</implementationClassname>
 	<implementationId>salesforce-updatesobject-impl</implementationId>
-	<implementationVersion>1.0.12</implementationVersion>
+	<implementationVersion>$implementation.version$</implementationVersion>
 
 $Dependencies$
 
