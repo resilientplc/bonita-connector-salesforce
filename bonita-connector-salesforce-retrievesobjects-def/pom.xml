@@ -7,5 +7,6 @@
   </parent>
   
   <artifactId>bonita-connector-salesforce-retrievesobjects-def</artifactId>
+  <version>1.0.0</version>
   
 </project>

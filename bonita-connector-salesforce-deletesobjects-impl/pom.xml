@@ -10,19 +10,19 @@
 	<version>1.0.12</version>
 
 	<properties>
-		<implementation.id>salesforce-deletesobjects</implementation.id>
+        <definition.version>1.0.0</definition.version>
     </properties>
 
 	<dependencies>
 		<dependency>
 			<artifactId>bonita-connector-salesforce-deletesobjects-def</artifactId>
 			<groupId>org.bonitasoft.connectors</groupId>
-			<version>1.0.0</version>
+			<version>${definition.version}</version>
 		</dependency>
 		<dependency>
 			<artifactId>bonita-connector-salesforce-common</artifactId>
 			<groupId>org.bonitasoft.connectors</groupId>
-			<version>${salesforce.common.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
 	<build>

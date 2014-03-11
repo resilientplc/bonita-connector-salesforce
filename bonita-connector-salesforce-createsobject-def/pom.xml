@@ -7,5 +7,6 @@
   </parent>
   
   <artifactId>bonita-connector-salesforce-createsobject-def</artifactId>
-  
+  <version>1.0.0</version>
+   
 </project>
