@@ -30,32 +30,32 @@ import com.sforce.soap.partner.sobject.SObject;
  */
 public class QuerySObjectsConnector extends SalesforceConnector {
 
-	// input parameters
-	private static final String QUERY = "query";
-	// output parameters
-	private static final String QUERY_RESULT = "queryResult";
-	private static final String S_OBJECTS = "sObjects";
+    // input parameters
+    private static final String QUERY = "query";
+    // output parameters
+    private static final String QUERY_RESULT = "queryResults";
+    private static final String S_OBJECTS = "sObjects";
 
-	public QuerySObjectsConnector() {
-	}
+    public QuerySObjectsConnector() {
+    }
 
-	@Override
-	protected List<String> validateExtraValues() {
-		final List<String> errors = new ArrayList<String>(1);
-		final String query = (String) getInputParameter(QUERY);
-		if (query == null || query.length() == 0) {
-			errors.add("Query cannot be empty or null");
-		}
-		return errors;
-	}
+    @Override
+    protected List<String> validateExtraValues() {
+        final List<String> errors = new ArrayList<String>(1);
+        final String query = (String) getInputParameter(QUERY);
+        if (query == null || query.length() == 0) {
+            errors.add("Query cannot be empty or null");
+        }
+        return errors;
+    }
 
-	@Override
-	protected void executeFunction(final PartnerConnection connection)
-			throws Exception {
-		final String query = String.valueOf(getInputParameter(QUERY));
-		final QueryResult queryResult = connection.query(query);
-		setOutputParameter(QUERY_RESULT, queryResult);
-		final List<SObject> sObjects = Arrays.asList(queryResult.getRecords());
-		setOutputParameter(S_OBJECTS, sObjects);
-	}
+    @Override
+    protected void executeFunction(final PartnerConnection connection)
+            throws Exception {
+        final String query = String.valueOf(getInputParameter(QUERY));
+        final QueryResult queryResult = connection.query(query);
+        setOutputParameter(QUERY_RESULT, queryResult);
+        final List<SObject> sObjects = Arrays.asList(queryResult.getRecords());
+        setOutputParameter(S_OBJECTS, sObjects);
+    }
 }
