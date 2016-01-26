@@ -16,6 +16,7 @@
  */
 package org.bonitasoft.connectors.salesforce.partner;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,21 +46,14 @@ public class CreateSObjectConnector extends SalesforceConnector {
         final SObject sObject = new SObject();
         sObject.setType((String) getInputParameter(S_OBJECT_TYPE));
         @SuppressWarnings("unchecked")
-        // final Map<String, Object> fieldValues = (Map<String, Object>) getInputParameter(
-        // FIELD_VALUES, (Serializable) Collections.emptyMap());
-        // for (final Map.Entry<String, Object> field : fieldValues.entrySet()) {
-        // sObject.setField(field.getKey(), field.getValue());
-        // }
         final List<List<Object>> parametersList = (List<List<Object>>) getInputParameter(FIELD_VALUES);
         if (parametersList != null) {
-            for (List<Object> rows : parametersList) {
+            for (final List<Object> rows : parametersList) {
                 if (rows.size() == 2) {
-                    Object keyContent = rows.get(0);
-                    Object valueContent = rows.get(1);
+                    final Object keyContent = rows.get(0);
+                    final Object valueContent = rows.get(1);
                     if (keyContent != null && valueContent != null) {
-                        final String key = keyContent.toString();
-                        final String value = valueContent.toString();
-                        sObject.setField(key, value);
+                        sObject.setField(keyContent.toString(), valueContent instanceof Serializable ? valueContent : valueContent.toString());
                     }
                 }
             }
@@ -82,7 +76,6 @@ public class CreateSObjectConnector extends SalesforceConnector {
             errors.add("objectType cannot be null or empty");
         }
         @SuppressWarnings("unchecked")
-        // final Map<String, Object> fieldValues = (Map<String, Object>) getInputParameter(FIELD_VALUES);
         final List<List<String>> fieldValues = (List<List<String>>) getInputParameter(FIELD_VALUES);
         if (fieldValues == null || fieldValues.size() == 0) {
             errors.add("fieldValues cannot be null or empty");

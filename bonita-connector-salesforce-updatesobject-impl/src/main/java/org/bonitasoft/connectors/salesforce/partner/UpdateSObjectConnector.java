@@ -16,6 +16,7 @@
  */
 package org.bonitasoft.connectors.salesforce.partner;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,7 +61,6 @@ public class UpdateSObjectConnector extends SalesforceConnector {
             errors.add(typeEmptyError);
         }
         @SuppressWarnings("unchecked")
-        // final Map<String, Object> fieldValues = (Map<String, Object>) getInputParameter(FIELD_VALUES);
         final List<List<String>> fieldValues = (List<List<String>>) getInputParameter(FIELD_VALUES);
         if (fieldValues == null || fieldValues.size() == 0) {
             errors.add("fieldValues cannot be null or empty");
@@ -75,20 +75,14 @@ public class UpdateSObjectConnector extends SalesforceConnector {
         sObject.setType((String) getInputParameter(S_OBJECT_TYPE));
         sObject.setId((String) getInputParameter(S_OBJECT_ID));
         @SuppressWarnings("unchecked")
-        // final Map<String, Object> fieldValues = (Map<String, Object>) getInputParameter(FIELD_VALUES);
-        // for (final Map.Entry<String, Object> entry : fieldValues.entrySet()) {
-        // sObject.setField(entry.getKey(), entry.getValue());
-        // }
         final List<List<Object>> parametersList = (List<List<Object>>) getInputParameter(FIELD_VALUES);
         if (parametersList != null) {
-            for (List<Object> rows : parametersList) {
+            for (final List<Object> rows : parametersList) {
                 if (rows.size() == 2) {
-                    Object keyContent = rows.get(0);
-                    Object valueContent = rows.get(1);
+                    final Object keyContent = rows.get(0);
+                    final Object valueContent = rows.get(1);
                     if (keyContent != null && valueContent != null) {
-                        final String key = keyContent.toString();
-                        final String value = valueContent.toString();
-                        sObject.setField(key, value);
+                        sObject.setField(keyContent.toString(), valueContent instanceof Serializable ? valueContent : valueContent.toString());
                     }
                 }
             }
