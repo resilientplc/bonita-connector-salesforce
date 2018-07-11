@@ -9,7 +9,7 @@
 
 	<artifactId>bonita-connector-salesforce</artifactId>
 	<packaging>pom</packaging>
-	
+
 	<name>bonita-connector-salesforce</name>
 	
 	<modules>
@@ -27,7 +27,7 @@
 	</modules>
 	
 	<properties>
-		<bonita.engine.version>6.2.0</bonita.engine.version>
+		<bonita.engine.version>7.5.2</bonita.engine.version>
 		<salesforce.common.version>1.0.0</salesforce.common.version>
 	</properties>
    
@@ -48,12 +48,12 @@
 			<dependency>
 				<groupId>com.force.api</groupId>
 				<artifactId>force-wsc</artifactId>
-				<version>24.0.0</version>
+				<version>43.0.0</version>
 			</dependency>
 			<dependency>
 				<groupId>com.force.api</groupId>
 				<artifactId>force-partner-api</artifactId>
-				<version>24.0.0</version>
+				<version>43.0.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
