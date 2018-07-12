@@ -46,7 +46,7 @@
 		<widget id="sObjectIds" inputName="sObjectIds" xsi:type="definition:List" />
 	</page>
 
-    <jarDependency>force-partner-api-24.0.0.jar</jarDependency>
-  	<jarDependency>force-wsc-24.0.0.jar</jarDependency>
+    <jarDependency>force-partner-api-43.0.0.jar</jarDependency>
+  	<jarDependency>force-wsc-43.0.0.jar</jarDependency>
 
 </definition:ConnectorDefinition>

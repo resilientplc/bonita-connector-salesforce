@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.sforce.soap.partner.PartnerConnection;
 import com.sforce.ws.ConnectorConfig;
+import java.util.logging.Logger;
 import org.bonitasoft.engine.connector.AbstractConnector;
 import org.bonitasoft.engine.connector.ConnectorException;
 import org.bonitasoft.engine.connector.ConnectorValidationException;
@@ -124,17 +125,17 @@ public abstract class SalesforceConnector extends AbstractConnector {
         }
 
         String authEndpoint = (String) getInputParameter(SalesforceConnector.AUTHENDPOINT);
-        if (authEndpoint != null && !authEndpoint.endsWith("24.0")) {
-            errors.add("Please ensure the API version is 24.0");
+        if (authEndpoint != null && !authEndpoint.endsWith("43.0")) {
+            errors.add("Please ensure the API version is 43.0");
         }
         String serviceEndpoint = (String) getInputParameter(SalesforceConnector.SERVICEENDPOINT);
-        if (serviceEndpoint != null && !serviceEndpoint.endsWith("24.0")) {
-            errors.add("Please ensure the API version is 24.0");
+        if (serviceEndpoint != null && !serviceEndpoint.endsWith("43.0")) {
+            errors.add("Please ensure the API version is 43.0");
         }
 
         String restEndpoint = (String) getInputParameter(SalesforceConnector.RESTENDPOINT);
-        if (restEndpoint != null && !restEndpoint.endsWith("24.0")) {
-            errors.add("Please ensure the API version is 24.0");
+        if (restEndpoint != null && !restEndpoint.endsWith("43.0")) {
+            errors.add("Please ensure the API version is 43.0");
         }
 
         errors.addAll(validateExtraValues());
