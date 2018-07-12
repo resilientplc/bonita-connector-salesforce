@@ -10,8 +10,8 @@
 	<input name="username" type="java.lang.String" mandatory="true" />
 	<input name="password" type="java.lang.String" mandatory="true" />
 	<input name="securityToken" type="java.lang.String" mandatory="true" />
-	<input name="authEndpoint" type="java.lang.String" defaultValue="https://login.salesforce.com/services/Soap/u/24.0"/>
-	<input name="serviceEndpoint" type="java.lang.String" defaultValue="https://login.salesforce.com/services/Soap/u/24.0"/>
+	<input name="authEndpoint" type="java.lang.String" defaultValue="https://login.salesforce.com/services/Soap/u/43.0"/>
+	<input name="serviceEndpoint" type="java.lang.String" defaultValue="https://login.salesforce.com/services/Soap/u/43.0"/>
 	<input name="restEndpoint" type="java.lang.String" />
 	<input name="proxyHost" type="java.lang.String" />
 	<input name="proxyPort" type="java.lang.Integer" defaultValue="0" />
