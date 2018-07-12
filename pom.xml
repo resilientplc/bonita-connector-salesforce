@@ -69,10 +69,24 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:bonitasoft/bonita-connector-salesforce.git</developerConnection>
-        <connection>scm:git:git@github.com:bonitasoft/bonita-connector-salesforce.git</connection>
-        <url>https://github.com/bonitasoft/bonita-connector-salesforce</url>
+        <developerConnection>scm:git:git@github.com:resilientplc/bonita-connector-salesforce.git</developerConnection>
+        <connection>scm:git:git@github.com:resilientplc/bonita-connector-salesforce.git</connection>
+        <url>https://github.com/resilientplc/bonita-connector-salesforce</url>
         <tag>HEAD</tag>
     </scm>
+
+		<distributionManagement>
+			<repository>
+				<id>releases</id>
+				<name>Releases</name>
+				<url>http://maven.teamphone.priv:8180/nexus/content/repositories/releases</url>
+			</repository>
+			<snapshotRepository>
+				<id>snapshots</id>
+				<name>Snapshots</name>
+				<url>http://maven.teamphone.priv:8180/nexus/content/repositories/snapshots</url>
+			</snapshotRepository>
+		</distributionManagement>
+
 
 </project>
